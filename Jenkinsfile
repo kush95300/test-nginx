@@ -4,7 +4,7 @@ pipeline {
     }
      environment {
         IMAGE = 'my_nginx'
-        VERSION    = 'latest'
+        VERSION    = 'any'
     }
     stages {
 
@@ -19,7 +19,7 @@ pipeline {
                 unstash 'nginx-repo'
                 sh '''
                 timestamp=$(date "+%y%m%d%H%M%S")
-                old="${IMAGE}:$timestamp"
+                old="${IMAGE}:changed$timestamp"
                 new="${IMAGE}:${VERSION}"
                 echo $timestamp $old $new
                 if [[ ${VERSION} == 'latest' ]]

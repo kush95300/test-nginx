@@ -4,7 +4,7 @@ pipeline {
     }
      environment {
         IMAGE = 'my_nginx'
-        VERSION    = 'any'
+        VERSION    = 'latest'
     }
     stages {
 

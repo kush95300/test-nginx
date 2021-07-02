@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'nginx-server'
+        label 'myserver'
     }
      environment {
         IMAGE = 'my_nginx'

@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'nginx-server'
+    }
      environment {
         IMAGE = 'my_nginx'
         VERSION    = 'latest'
